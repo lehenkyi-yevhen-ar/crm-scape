@@ -14,9 +14,7 @@ export interface StatusLabelProps {
   disabled?: boolean;
 }
 
-export default function StatusLabel({ children, status, disabled }: StatusLabelProps) {
-  console.log(process.env.NEXT_PUBLIC_CRM_SECRET_KEY);
-  
+export default function StatusLabel({ children, status, disabled }: StatusLabelProps) {  
   return (
     <div
       className={clsx(
