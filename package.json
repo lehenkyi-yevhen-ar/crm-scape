@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
+    "@types/next": "^9.0.0",
     "clsx": "^2.1.1",
     "eslint-config-prettier": "^10.0.1",
     "formik": "^2.4.6",
-    "next": "15.1.4",
+    "next": "^15.1.5",
     "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
