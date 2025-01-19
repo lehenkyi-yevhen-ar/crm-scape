@@ -4,8 +4,11 @@ import { Field } from 'formik';
 import React from 'react';
 
 export interface InputfieldProps {
-    id: string,
+    name: string;
     label?: string;
+    placeholder?: string;
+    type?: string;
+    id?: string;
 }
 
 export default function Inputfield({label, id, ...rest}: InputfieldProps) {

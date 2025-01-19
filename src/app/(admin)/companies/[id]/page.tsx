@@ -1,16 +1,13 @@
-import React from 'react';
+import {use} from 'react';
 import Header from '@/app/components/header';
 
-export interface PageProps {
-  params: { id: string };
-}
 
-export default async function Page({ params }: PageProps) {
-  const { id } = await params;
+export default function Page({ params }: { params: Promise<{ id: string }>}) {
+  const { id } =  use(params);
   
   return (
     <>
-      <Header>Company ({id})</Header>
+      <Header>Company ({id}) </Header>
     </>
   );
 }
