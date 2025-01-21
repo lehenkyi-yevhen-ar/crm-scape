@@ -40,18 +40,20 @@ export default function PromotionForm({
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: createPromotion,
-    onSuccess: () => {
-        queryClient.setQueryData(['promotions', companyId], (oldData) => {
-            if (oldData) {
-                return oldData.concat(data);
-          }
-      })
+    onSuccess: (data) => {
+      queryClient.setQueryData(['promotions', companyId], (oldData) => {
+        if (Array.isArray(oldData)) {
+          return [...oldData, data];
+        }
+        return [data];
+      });
 
       queryClient.setQueryData(['promotions'], (oldData) => {
-            if (oldData) {
-                return oldData.concat(data);
-          }
-      })
+        if (Array.isArray(oldData)) {
+          return [...oldData, data];
+        }
+        return [data];
+      });
     },
   });
 
